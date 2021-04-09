@@ -30,11 +30,12 @@ const posterMap = {
 export default class MovieCard extends Component {
 
   render() {
+    console.log('hiii')
     return (
       <div className="movie-card">
         {/* which component should receive which props? */}
         <CardFront />
-        <CardBack title={posterMap.title}/>
+        <CardBack />
       </div>
     )
   }

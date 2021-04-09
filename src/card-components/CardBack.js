@@ -11,16 +11,17 @@ const imgMapper = {0: zero, 1: one, 2: two, 3: three, 4: four, 5: five}
 export default class CardBack extends Component {
 
   generateRatingElement = () => {
-    console.log(this.props.IMDRating) // console.log is not working, I believe its because the cards are not attached
-    return (
-      (this.props.IMDRating !== null)
-          ? <img src={imgMapper[this.props.IMDRating]} alt='' />
-          : <h4>No Rating Found</h4>
-    )
+  // console.log is not working, I believe its because the cards are not attached
+      if (this.props.title === null) {
+        return <h4>No Rating Found</h4>
+      } else {
+        return <img src={imgMapper[this.props.IMDBRating]} alt='' />
+      }
   }
 
   render() {
-    const movieGenres = this.props.genres.join(', ')
+    const movieGenres = this.props.genres
+    // .join(', ')
     console.log(movieGenres)
     return (
       <div className="card-back">
